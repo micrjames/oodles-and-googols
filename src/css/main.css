@@ -5,6 +5,11 @@
   margin: 0;
 }
 
+main #results .modal-header, main #results {
+  display: flex;
+  flex-direction: column;
+}
+
 .hidden {
   display: none;
 }
@@ -228,4 +233,34 @@ main h1 {
   main h1 {
     margin: 5vh 0;
   }
+}
+main #results {
+  position: absolute;
+  width: 90%;
+  background: white;
+  color: black;
+  position: absolute;
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+}
+main #results .modal-header-close {
+  font-size: 2.5rem;
+  margin-right: 0.5rem;
+  align-self: flex-end;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+main #results .modal-header-text {
+  font-size: 1.75rem;
+  align-self: center;
+  text-decoration: underline;
+}
+main #results .modal-body {
+  margin: 1rem;
+  height: 100%;
+}
+main #results.hidden {
+  display: none;
 }
