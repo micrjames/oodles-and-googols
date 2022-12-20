@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *, *::before, *::after {
   box-sizing: border-box;
   padding: 0;
@@ -88,7 +89,7 @@ header nav {
   margin-top: 0.35rem;
 }
 header {
-  width: 100%;
+  width: 100vw;
   position: sticky;
   top: 0;
   display: flex;
@@ -110,8 +111,8 @@ footer #site-info ul li:not(:last-child) {
 footer {
   background-color: lightgray;
   font-size: 1.15rem;
-  width: 100%;
-  position: sticky;
+  width: 100vw;
+  position: fixed;
   bottom: 0;
   display: flex;
   flex-direction: column;
@@ -138,9 +139,85 @@ main #features .features-listing-text-heading {
   font-size: 1.5rem;
   font-weight: bold;
 }
+main #products {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+@media (min-width: 768px) {
+  main #products {
+    display: flex;
+  }
+}
+main #products .product {
+  border: 1px solid black;
+  margin-bottom: 2rem;
+  width: 400px;
+}
+main #products .product:last-child {
+  margin-bottom: 7.5rem;
+}
+@media (min-width: 768px) {
+  main #products .product {
+    margin-bottom: 7.5rem;
+  }
+}
+main #products .product-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.85rem 0;
+  background-color: lightgray;
+}
+main #products .product-price {
+  font-size: 1.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+}
+main #products .product-price span::before {
+  content: "$";
+}
+main #products .product-price span:first-child::after {
+  content: "‒";
+  margin-left: 5px;
+}
+main #products .product-selling-points {
+  margin: 1.2rem 1.75rem 0.95rem 4.75rem;
+}
+main #products .product-selling-points i {
+  float: left;
+  font-size: 3.75rem;
+  margin-right: 3.25rem;
+}
+main #products .product-selling-points ul {
+  list-style-type: none;
+  text-align: left;
+}
+main #products .product .btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.25rem;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  background-color: goldenrod;
+  color: black;
+  border-radius: 0;
+}
+@media (min-width: 768px) {
+  main #products .product:not(:last-child) {
+    margin-right: 1.5rem;
+  }
+}
+
 main {
   width: 100%;
-  height: 100vh;
 }
 main h1 {
   font-size: 1.5rem;

@@ -1,0 +1,70 @@
+@import '../../utils/button';
+
+%products {
+   position: absolute;
+   left: 50%;
+   transform:translateX(-50%);
+   @include md {
+	display: flex;
+   }
+   text-align: center;
+   .product {
+	   border: 1px solid black;
+	   &:last-child {
+		  margin-bottom: 7.5rem;
+	   }
+	   margin-bottom: 2rem;
+	   @include md {
+		   margin-bottom: 7.5rem;
+	   }
+
+	   width: 400px;
+	   &-header {
+		  font-size: 1.5rem;
+		  font-weight: bold;
+		  padding: 0.85rem 0;
+		  background-color: lightgray; 
+	   }
+	   &-price {
+		  font-size: 1.5rem;
+		  margin-top: 0.75rem;
+		  margin-bottom: 1rem;
+		  
+		  span {
+			 &::before {
+				content: "\0024";
+			 }
+
+			 &:first-child::after {
+				content: "\2012";
+				margin-left: 5px;
+			 }
+		  }
+	   }
+	   &-selling-points {
+		  margin: 1.2rem 1.75rem 0.95rem 4.75rem;
+		  i {
+			 float: left;
+			 font-size: 3.75rem;
+			 margin-right: 3.25rem;
+		  }
+		  ul {
+			 list-style-type: none;
+			 text-align: left;
+		  }
+	   }
+	   .btn {
+		  @include button(1.25rem, 0.5rem 1.5rem, 1.5rem 0);
+		  width: 50%;
+		  background-color: goldenrod;
+		  color: black;
+		  border-radius: 0;
+	   }
+
+	   &:not(:last-child) {
+		  @include md {
+			 margin-right: 1.5rem;
+		  }
+	   }
+   }
+}
