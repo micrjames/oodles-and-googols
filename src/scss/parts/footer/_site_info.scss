@@ -1,0 +1,13 @@
+%site-info {
+    ul {
+        list-style-type: none;
+        li { 
+            display: inline;
+            cursor: pointer;
+ 
+            &:not(:last-child) { 
+                margin-right: 1.2rem;
+            } 
+        } 
+   } 
+}

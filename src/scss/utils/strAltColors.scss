@@ -1,0 +1,15 @@
+@use "sass:list";                                                                                         
+@use "sass:string";
+
+$color-list: blue, red, yellow, blue, green, red, blue;
+
+@mixin str-alt-colors($str) {
+   @for $i from 1 through list.length($color-list) {
+	   span:nth-child(#{$i}) {
+		  &::after {
+			  content: "#{string.slice($str, $i, $i)}";
+			  color: list.nth($color-list, $i);
+		  }
+	   }
+   }
+}

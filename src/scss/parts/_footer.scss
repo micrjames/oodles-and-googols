@@ -1,0 +1,19 @@
+@import "./footer/site_info";
+
+%footer {
+   background-color: lightgray;
+   font-size: 1.15rem;
+   width: 100%;
+   position: sticky;
+   bottom: 0;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+   padding: 0.95rem;
+   #site-info {
+	   @extend %site-info;
+   }
+   #copyright-info {
+	  font-size: 1rem;
+   }
+}

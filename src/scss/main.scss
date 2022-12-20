@@ -1,0 +1,12 @@
+@import 'utils/config', 'parts/header', 'parts/footer';
+
+header {
+    @extend %header;
+}
+main {
+    width: 100%;
+	height: 85vh;
+}
+footer {
+    @extend %footer;
+}

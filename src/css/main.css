@@ -1,0 +1,128 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+header #company-identifier #logo-icon {
+  font-size: 1.45rem;
+  color: blue;
+}
+@media (min-width: 768px) {
+  header #company-identifier #logo-icon {
+    visibility: hidden;
+  }
+}
+header #company-identifier #company-name {
+  margin-left: 5px;
+  font-size: 1.5rem;
+  visibility: hidden;
+}
+header #company-identifier #company-name span:nth-child(1)::after {
+  content: "G";
+  color: blue;
+}
+header #company-identifier #company-name span:nth-child(2)::after {
+  content: "o";
+  color: red;
+}
+header #company-identifier #company-name span:nth-child(3)::after {
+  content: "o";
+  color: yellow;
+}
+header #company-identifier #company-name span:nth-child(4)::after {
+  content: "g";
+  color: blue;
+}
+header #company-identifier #company-name span:nth-child(5)::after {
+  content: "o";
+  color: green;
+}
+header #company-identifier #company-name span:nth-child(6)::after {
+  content: "l";
+  color: red;
+}
+header #company-identifier #company-name span:nth-child(7)::after {
+  content: "!";
+  color: blue;
+}
+@media (min-width: 768px) {
+  header #company-identifier #company-name {
+    visibility: visible;
+  }
+}
+
+header nav menu {
+  list-style-type: none;
+}
+header nav menu li {
+  font-size: 1.2rem;
+  display: inline;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+header nav menu li:last-child i {
+  font-size: 1.75rem;
+}
+header nav menu li:last-child span {
+  position: relative;
+  bottom: 20px;
+  right: 15px;
+  background-color: red;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+}
+header nav menu li:not(:last-child) {
+  margin-right: 1.2rem;
+}
+header nav menu li:hover {
+  font-weight: bolder;
+}
+
+header nav {
+  margin-top: 0.35rem;
+}
+header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: lightgray;
+  padding: 1.25rem 1.2rem;
+}
+footer #site-info ul {
+  list-style-type: none;
+}
+footer #site-info ul li {
+  display: inline;
+  cursor: pointer;
+}
+footer #site-info ul li:not(:last-child) {
+  margin-right: 1.2rem;
+}
+
+footer {
+  background-color: lightgray;
+  font-size: 1.15rem;
+  width: 100%;
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0.95rem;
+}
+footer #copyright-info {
+  font-size: 1rem;
+}
+
+main {
+  width: 100%;
+  height: 85vh;
+}
