@@ -1,5 +1,5 @@
 @use 'sass:math';
-@import 'modal-hdr', 'modal-body';
+@import 'modal-body';
 
 @mixin modal($width, $bg-color, $text-color, $close-right:false, $centered:true, $height:-1) {
 	 position: absolute;
@@ -30,7 +30,6 @@
 		   font-size: 1.75rem;
 		   align-self: center;
 		   text-decoration: underline;
-           @extend %modal-hdr;
 		}
 	 }
 	 .modal-body {
