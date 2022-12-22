@@ -42,26 +42,26 @@ const createCategoryBtnGroup = function(categoryResults, meals) {
    const categoryResultsPrevBtn = createBtn("category-results-prev-btn", "btn", "less-than");
    const categoryResultsNextBtn = createBtn("category-results-next-btn", "btn", "greater-than");
 
-   if(whereSliceStart == 0) {
-	   categoryResultsPrevBtn.disabled = true;
-   } 
-   if(meals.length - sliceEnd > mealsPerPage){
-	   categoryResultsNextBtn.disabled = true;
-   }
    categoryResultsPrevBtn.addEventListener("click", function() {
-	  whereSliceStart-=6;
-	  sliceEnd = whereSliceStart+6;
+	  whereSliceStart-=mealsPerPage;
+	  sliceEnd = whereSliceStart+mealsPerPage;
 	  const mealsSlice = meals.slice(whereSliceStart, sliceEnd);
 	  resetCategoryResults(categoryResults);
 	  createCategoryResults(categoryResults, meals, mealsSlice);
    });
    categoryResultsNextBtn.addEventListener("click", function() {
-	  whereSliceStart+=6;
-	  sliceEnd = whereSliceStart+6;
+	  whereSliceStart+=mealsPerPage;
+	  sliceEnd = whereSliceStart+mealsPerPage;
 	  const mealsSlice = meals.slice(whereSliceStart, sliceEnd);
 	  resetCategoryResults(categoryResults);
 	  createCategoryResults(categoryResults, meals, mealsSlice);
    });
+   if(whereSliceStart == 0) {
+	   categoryResultsPrevBtn.disabled = true;
+   } 
+   if(meals.length - whereSliceStart < mealsPerPage) {
+	   categoryResultsNextBtn.disabled = true;
+   }
    const categoryResultsBtnGroup = createBtnGroup("category-results-btn-group", [categoryResultsPrevBtn, categoryResultsNextBtn]);
 
    return categoryResultsBtnGroup;
