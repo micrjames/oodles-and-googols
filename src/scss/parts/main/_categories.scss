@@ -1,7 +1,16 @@
 @import "category-result";
 
 %category-result {
+   display: grid;
+   grid-template-columns: repeat(2, auto);
+   grid-row-gap: 15px;
+   @include md {
+	  grid-template-columns: repeat(3, auto);
+   }
    .category-result {
-	   @include category-result(95%, 350px, 0.75rem, 1.5rem);
+	   @include category-result(60%, 140px, 0.25rem, 0.95rem);
+	   @include md {
+		  @include category-result(40%, 165px, 0.35rem, 0.95rem);
+	   }
    }
 }
