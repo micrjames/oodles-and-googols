@@ -1,4 +1,4 @@
-import { createSpan } from "./DOMutils.js";
+import { createSpan, createBtn, createBtnGroup, removeChildren } from "./DOMutils.js";
 import { titleCase } from "./utils.js";
 
 const createCategoryResult = function(meal) {
@@ -12,6 +12,13 @@ const createCategoryResult = function(meal) {
    categoryResult.appendChild(categoryResultTitle); 
 
    return categoryResult;
+};
+const createCategoryBtnGroup = function() {
+   const categoryResultsPrevBtn = createBtn("category-results-prev-btn", "btn", "less-than");
+   const categoryResultsNextBtn = createBtn("category-results-next-btn", "btn", "greater-than");
+   const categoryResultsBtnGroup = createBtnGroup("category-results-btn-group", [categoryResultsPrevBtn, categoryResultsNextBtn]);
+
+   return categoryResultsBtnGroup;
 };
 
 const createResultThumb = function(thumb) {
@@ -29,4 +36,12 @@ const createResultTitle = function(title) {
    return categoryResultTitle;
 };
 
-export { createCategoryResult };
+const setCategoryResult = function(meal) {
+   const categoryResult = createCategoryResult(meal);
+   return categoryResult;
+};
+const resetCategoryResults = function(categoryResults) {
+   removeChildren(categoryResults);
+};
+
+export { setCategoryResult, resetCategoryResults, createCategoryBtnGroup };

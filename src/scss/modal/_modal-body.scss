@@ -1,4 +1,4 @@
-@import '../utils/button', '../parts/main/recipes', '../parts/main/categories';
+@import '../utils/button', '../parts/main/recipes', '../parts/main/categories', '../parts/main/category-result-btn-group';
 
 $primary-color:  #282828;
 $secondary-color: #ff652f;
@@ -9,5 +9,8 @@ $secondary-color: #ff652f;
 	}
 	#category-results {
 	    @extend %category-result;
+		#category-results-btn-group {
+		    @extend %results-btn-group;
+		}
 	}
 }
