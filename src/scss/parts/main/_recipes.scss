@@ -1,0 +1,63 @@
+%recipe-result {
+   #recipe-result {
+	  margin: 0 auto;
+	  border: 1px solid lightgrey;
+	  width: 95%;
+	  &-image-thumb {
+		 width: 100%;
+		 height: 350px;
+	  }
+	  &-title {
+		 position: relative;
+		 bottom: 325px;
+		 background-color: white;
+		 padding: 0.75rem 0;
+		 text-align: center;
+		 font-size: 1.5rem;
+	  }
+	  &-ingredients {
+		 &-title{
+			text-align: center;
+			margin-bottom: 1.5rem;
+			font-size: 1.5rem;
+		 }
+		 ul {
+			list-style-position: inside;
+			margin: 0 2rem;
+			column-count: 2;
+
+			li {
+			   span {
+				  &:first-child {
+					 margin: 0 0.25rem;
+				  }
+			   }
+			}
+		 }
+	  }
+	  &-instructions {
+		 padding: 1.2rem;
+		 &-title {
+			text-align: center;
+			margin-bottom: 1.5rem;
+			font-size: 1.5rem;
+		 }
+		 &-text-list {
+			list-style-type: none;
+			list-style-position: inside;
+			counter-reset: instruction-step; 
+			column-count: 2;
+			li {
+			   &::before {
+				  counter-increment: instruction-step;
+				  content: "Step " counter(instruction-step) ". ";
+				  font-weight: bolder;
+			   }
+			   &::after {
+				  content: ".";
+			   }
+			}
+		 }
+	  }
+   }   
+}

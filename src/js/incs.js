@@ -4,4 +4,12 @@ const main = body.children.namedItem("main");
 const products = main.children.namedItem("products");
 const results = main.children.namedItem("results");
 
-export { products, results };
+const resultsHdr = results.children.namedItem("modal-header");
+const resultsCloseBtn = resultsHdr.children.namedItem("modal-header-close");
+const resultsHdrText = resultsHdr.children[1];
+                                    
+const resultsBody = results.children.namedItem("modal-body");
+const recipeResults = resultsBody.children.namedItem("recipe-results");
+const categoryResults = resultsBody.children.namedItem("category-results");
+
+export { products, results, resultsCloseBtn, resultsHdrText, recipeResults, categoryResults };

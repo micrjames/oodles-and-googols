@@ -1,7 +1,13 @@
-@import '../utils/button';
+@import '../utils/button', '../parts/main/recipes', '../parts/main/categories';
 
 $primary-color:  #282828;
 $secondary-color: #ff652f;
 
 %modal-body {
+    #recipe-results {
+	    @extend %recipe-result;
+	}
+	#category-results {
+	    @extend %category-result;
+	}
 }

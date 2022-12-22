@@ -1,0 +1,7 @@
+@import "category-result";
+
+%category-result {
+   .category-result {
+	   @include category-result(95%, 350px, 0.75rem, 1.5rem);
+   }
+}
