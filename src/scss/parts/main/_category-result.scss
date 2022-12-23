@@ -1,3 +1,5 @@
+@import '../../utils/shapes';
+
 @mixin category-result($width, $height, $text-padding, $font-size) {
    margin: 0 auto;
    border: 1px solid lightgrey;
@@ -17,4 +19,30 @@
       text-align: center;
       font-size: $font-size;
   } 
+  .selection {
+	  display: inline-block;                                                                     
+      width: 100%;
+      height: 100%;
+      opacity: 70%;
+      background-color: black;
+
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+
+	  &::before {
+		  position: relative;
+		  top: 20%;
+		  left: 40%;
+		  @include x-left(grey, 50%, .08);
+		  transform-origin: left bottom;
+	  }
+	  &::after {
+		  position: relative;
+		  top: 52%;
+		  left: 41%;
+		  @include x-right(grey, 20%, .20);
+		  transform-origin: left bottom;
+	  }
+  }
 }

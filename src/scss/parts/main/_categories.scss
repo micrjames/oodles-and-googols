@@ -1,6 +1,7 @@
 @import "category-result";
 
 %category-result {
+   cursor: pointer;
    display: grid;
    grid-template-columns: repeat(2, auto);
    grid-row-gap: 15px;
@@ -8,6 +9,7 @@
 	  grid-template-columns: repeat(3, auto);
    }
    .category-result {
+	   position: relative;
 	   @include category-result(60%, 140px, 0.25rem, 0.95rem);
 	   @include md {
 		  @include category-result(40%, 165px, 0.35rem, 0.95rem);

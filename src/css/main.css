@@ -275,6 +275,7 @@ main #results .modal-body #recipe-results #recipe-result-instructions-text-list 
 }
 
 main #results .modal-body #category-results {
+  cursor: pointer;
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-row-gap: 15px;
@@ -285,6 +286,7 @@ main #results .modal-body #category-results {
   }
 }
 main #results .modal-body #category-results .category-result {
+  position: relative;
   margin: 0 auto;
   border: 1px solid lightgrey;
   width: 60%;
@@ -303,6 +305,40 @@ main #results .modal-body #category-results .category-result-title {
   padding: 0.25rem 0;
   text-align: center;
   font-size: 0.95rem;
+}
+main #results .modal-body #category-results .category-result .selection {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  opacity: 70%;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+main #results .modal-body #category-results .category-result .selection::before {
+  position: relative;
+  top: 20%;
+  left: 40%;
+  background-color: grey;
+  content: "";
+  position: absolute;
+  width: 4%;
+  height: 50%;
+  transform: rotate(45deg);
+  transform-origin: left bottom;
+}
+main #results .modal-body #category-results .category-result .selection::after {
+  position: relative;
+  top: 52%;
+  left: 41%;
+  background-color: grey;
+  content: "";
+  position: absolute;
+  width: 4%;
+  height: 20%;
+  transform: rotate(-45deg);
+  transform-origin: left bottom;
 }
 @media (min-width: 768px) {
   main #results .modal-body #category-results .category-result {
@@ -324,6 +360,40 @@ main #results .modal-body #category-results .category-result-title {
     padding: 0.35rem 0;
     text-align: center;
     font-size: 0.95rem;
+  }
+  main #results .modal-body #category-results .category-result .selection {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    opacity: 70%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  main #results .modal-body #category-results .category-result .selection::before {
+    position: relative;
+    top: 20%;
+    left: 40%;
+    background-color: grey;
+    content: "";
+    position: absolute;
+    width: 4%;
+    height: 50%;
+    transform: rotate(45deg);
+    transform-origin: left bottom;
+  }
+  main #results .modal-body #category-results .category-result .selection::after {
+    position: relative;
+    top: 52%;
+    left: 41%;
+    background-color: grey;
+    content: "";
+    position: absolute;
+    width: 4%;
+    height: 20%;
+    transform: rotate(-45deg);
+    transform-origin: left bottom;
   }
 }
 

@@ -23,4 +23,8 @@ const categoriesData = {
     "non speciality": categoryNonData
 };
 
-export { products, results, resultsCloseBtn, resultsHdrText, recipeResults, categoryResults, categoriesData };
+const choiceRecord = {
+    "selections": [] 
+};
+
+export { products, results, resultsCloseBtn, resultsHdrText, recipeResults, categoryResults, categoriesData, choiceRecord };

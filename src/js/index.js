@@ -18,7 +18,7 @@ for(const product of products.children) {
 		   });
 	}
 }
-
+			   
 resultsCloseBtn.addEventListener("click", () => {
     results.classList.add("hidden");
     resetCategoryResults(categoryResults);
