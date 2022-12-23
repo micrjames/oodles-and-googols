@@ -1,6 +1,7 @@
 import { products, results, resultsCloseBtn, resultsHdrText, recipeResults, categoryResults, categoriesData } from "./incs.js";
 import { titleCase, ignoreText } from "./utils.js";
 import { setCategoryResults, resetCategoryResults } from "./categoryResults.js";
+import { resetRecipeResult } from "./recipeResults.js";
 
 for(const product of products.children) {
     for(const child of product.children) {
@@ -22,4 +23,5 @@ for(const product of products.children) {
 resultsCloseBtn.addEventListener("click", () => {
     results.classList.add("hidden");
     resetCategoryResults(categoryResults);
+    resetRecipeResult(recipeResults.children[0]);
 });

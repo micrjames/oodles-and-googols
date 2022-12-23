@@ -1,6 +1,7 @@
 import { createSpan, createBtn, createBtnGroup, removeChildren } from "./DOMutils.js";
 import { titleCase, getRecipe } from "./utils.js";
 import { choiceRecord, recipeResults } from "./incs.js";
+import { setRecipeResult } from "./recipeResults.js";
 
 const mealsPerPage = 6;
 let whereSliceStart;
@@ -82,6 +83,7 @@ const createCategoryBtnGroup = function(categoryResults, meals) {
 		   const recipePromise = getRecipe(mealId);
 		   recipePromise.then(recipe => {
 			   recipes = [...recipes, recipe.meals[0]];
+			   setRecipeResult(recipeResults.children[0], recipes[0]); 
 		   }).catch(err => console.error(err));
 		   console.log();
 	   });
