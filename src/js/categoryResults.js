@@ -1,12 +1,13 @@
 import { createSpan, createBtn, createBtnGroup, removeChildren } from "./DOMutils.js";
-import { titleCase } from "./utils.js";
-import { choiceRecord } from "./incs.js";
+import { titleCase, getRecipe } from "./utils.js";
+import { choiceRecord, recipeResults } from "./incs.js";
 
 const mealsPerPage = 6;
 let whereSliceStart;
 let sliceEnd;
 let resultsPage = 0;
 const setCategoryResults = function(categoryResults, meals, sliceStart) {
+   choiceRecord.selections = [];
    whereSliceStart = sliceStart;
    sliceEnd = sliceStart + mealsPerPage;
    let mealsSlice;
@@ -19,7 +20,6 @@ const setCategoryResults = function(categoryResults, meals, sliceStart) {
 };
 const createCategoryResults = function(categoryResults, meals, mealsSlice, mealSelections) {
    let selFlag;
-   console.log(mealSelections);
    for(let mealIndex = 0; mealIndex < mealsSlice.length; mealIndex++) {
 	   selFlag = mealSelections.includes(resultsPage*mealsPerPage+mealIndex);
        const categoryResult = createCategoryResult(categoryResults, mealsSlice[mealIndex], selFlag);   
@@ -65,6 +65,7 @@ const createCategoryResult = function(categoryResults, meal, selFlag) {
 const createCategoryBtnGroup = function(categoryResults, meals) {
    const categoryResultsPrevBtn = createBtn("category-results-prev-btn", "btn", "less-than");
    const categoryResultsNextBtn = createBtn("category-results-next-btn", "btn", "greater-than");
+   const categoryResultSelectBtn = createBtn("category-result-select-btn", "btn", "utensils"); 
 
    categoryResultsPrevBtn.addEventListener("click", function() {
 	  resultsPage--;
@@ -73,6 +74,19 @@ const createCategoryBtnGroup = function(categoryResults, meals) {
 	  const mealsSlice = meals.slice(whereSliceStart, sliceEnd);
 	  resetCategoryResults(categoryResults);
 	  createCategoryResults(categoryResults, meals, mealsSlice, choiceRecord.selections);
+   });
+   categoryResultSelectBtn.addEventListener("click", function() {
+	   let recipes = [];
+	   choiceRecord.selections.forEach(selection => {
+		   const mealId = meals[selection].idMeal;
+		   const recipePromise = getRecipe(mealId);
+		   recipePromise.then(recipe => {
+			   recipes = [...recipes, recipe.meals[0]];
+		   }).catch(err => console.error(err));
+		   console.log();
+	   });
+	   categoryResults.classList.add("hidden");
+	   recipeResults.classList.remove("hidden");
    });
    categoryResultsNextBtn.addEventListener("click", function() {
 	  resultsPage++;
@@ -89,7 +103,7 @@ const createCategoryBtnGroup = function(categoryResults, meals) {
    if(meals.length - whereSliceStart < mealsPerPage) {
 	   categoryResultsNextBtn.disabled = true;
    }
-   const categoryResultsBtnGroup = createBtnGroup("category-results-btn-group", [categoryResultsPrevBtn, categoryResultsNextBtn]);
+   const categoryResultsBtnGroup = createBtnGroup("category-results-btn-group", [categoryResultsPrevBtn, categoryResultSelectBtn, categoryResultsNextBtn]);
 
    return categoryResultsBtnGroup;
 };

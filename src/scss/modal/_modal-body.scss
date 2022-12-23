@@ -12,5 +12,8 @@ $secondary-color: #ff652f;
 		#category-results-btn-group {
 		    @extend %results-btn-group;
 		}
+		&.hidden {
+		   display: none;
+		}
 	}
 }

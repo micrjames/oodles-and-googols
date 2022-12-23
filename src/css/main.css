@@ -425,6 +425,10 @@ main #results .modal-body #category-results #category-results-btn-group .btn:dis
   opacity: 0.2;
 }
 
+main #results .modal-body #category-results.hidden {
+  display: none;
+}
+
 main {
   width: 100%;
 }

@@ -1,3 +1,5 @@
+import { fetchData } from "./fetchData.js";
+
 // Return the provided string with the first letter of each word capitalized. Make sure the rest
 // of the word is in lower case. For the purpose of this exercise, you should also capitalize connecting
 // words like the and of.
@@ -19,5 +21,8 @@ const ignoreText = function(str, textToIgnore, breakText) {
 
    return slicedId;
 };
+const getRecipe = async function(mealId) {
+    return await fetchData(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`); 
+};
 
-export { titleCase, ignoreText };
+export { titleCase, ignoreText, getRecipe };
