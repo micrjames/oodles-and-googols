@@ -25,6 +25,9 @@ main {
 	}
 	#results {
 	   @include modal($modal-width, $modal-bg-color, $modal-text-color, true, false);
+	   @include md {
+		  @include modal(0.65 * $modal-width, $modal-bg-color, $modal-text-color, true, false);
+	   }
 	   position: absolute;
        top: 10vh;
 	   left: 50%;
