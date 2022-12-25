@@ -1,0 +1,19 @@
+@mixin tabs($bg-color) {
+   #tabs-hdr-btn-group {
+       .btn {                                                                                   
+           border-radius: 0;
+		   background-color: lighten($bg-color, 10%);
+                      
+           &.enabled {
+			   background-color: lighten($bg-color, 25%);
+           }  
+
+		   @include transition-ease;
+       }   
+       &-btn {
+           @include button(1.5rem, 0.9rem 1.2rem, 0);
+		   border-color: black;
+		   border-width: 1px;
+       }   
+   } 
+}

@@ -22,6 +22,7 @@ main {
 	}
 	#products {
 	   @extend %products;
+	   padding-bottom: 10vh;
 	}
 	#results {
 	   @include modal($modal-width, $modal-bg-color, $modal-text-color, true, false);

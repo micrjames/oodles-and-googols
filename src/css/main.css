@@ -148,25 +148,19 @@ main #products {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  gap: 10px;
   text-align: center;
 }
 @media (min-width: 768px) {
   main #products {
-    display: flex;
+    grid-template-columns: repeat(3, auto);
   }
 }
 main #products .product {
   border: 1px solid black;
-  margin-bottom: 2rem;
   width: 400px;
-}
-main #products .product:last-child {
-  margin-bottom: 7.5rem;
-}
-@media (min-width: 768px) {
-  main #products .product {
-    margin-bottom: 7.5rem;
-  }
 }
 main #products .product-header {
   font-size: 1.5rem;
@@ -444,6 +438,9 @@ main h1 {
   main h1 {
     margin: 5vh 0;
   }
+}
+main #products {
+  padding-bottom: 10vh;
 }
 main #results {
   position: absolute;

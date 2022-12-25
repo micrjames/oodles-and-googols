@@ -14,12 +14,16 @@ const resultsBody = results.children.namedItem("modal-body");
 const recipeResults = resultsBody.children.namedItem("recipe-results");
 const categoryResults = resultsBody.children.namedItem("category-results");
 
-const categoryVeganData = await fetchData("../data/recipe_category_vegan.json");
-const categoryVegetarianData = await fetchData("../data/recipe_category_vegetarian.json");
-const categoryNonData = await fetchData("../data/recipe_category_non_speciality.json");
+const categoryVeganData = await fetchData("https://www.themealdb.com/api/json/v1/1/filter.php?c=Vegan");
+const categoryVegetarianData = await fetchData("https://www.themealdb.com/api/json/v1/1/filter.php?c=Vegetarian");
+const categoryBeefData = await fetchData("https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef");
+const categoryChickenData = await fetchData("https://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken");
+const categoryNonData = await fetchData("https://www.themealdb.com/api/json/v1/1/filter.php?c=Pasta");
 const categoriesData = {
     "vegan": categoryVeganData,
     "vegetarian": categoryVegetarianData,
+    "beef": categoryBeefData,
+    "chicken": categoryChickenData,
     "non speciality": categoryNonData
 };
 
