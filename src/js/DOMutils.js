@@ -1,3 +1,11 @@
+const buildEl = function(el, className=null, idName=null) {                  
+    const element = document.createElement(el);                              
+    if(className != null) element.setAttribute("class", className);          
+    if(idName != null) element.setAttribute("id", idName);                   
+                                                                             
+    return element;                                                          
+}; 
+
 const createSpan = function(text = null, idName = null, className = null) {
     const span = document.createElement("span");
     if(text) {
@@ -61,4 +69,4 @@ const removeChildren = function(context) {
    }
 };
 
-export { createSpan, createListItem, createBtn, createBtnGroup, removeChildren }; 
+export { buildEl, createSpan, createListItem, createBtn, createBtnGroup, removeChildren }; 

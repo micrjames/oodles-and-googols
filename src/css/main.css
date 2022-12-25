@@ -422,6 +422,32 @@ main #results .modal-body #category-results #category-results-btn-group {
   grid-column: 1/-1;
 }
 
+main #results .modal-body #recipe-results-hdr {
+  white-space: nowrap;
+}
+main #results .modal-body #recipe-results-hdr #tabs-hdr-btn-group .btn {
+  border-radius: 0;
+  background-color: #424242;
+  transition: all 0.5s ease-in-out;
+}
+main #results .modal-body #recipe-results-hdr #tabs-hdr-btn-group .btn.enabled {
+  background-color: #686868;
+}
+main #results .modal-body #recipe-results-hdr #tabs-hdr-btn-group-btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 0.9rem 1.2rem;
+  margin: 0;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  border-color: black;
+  border-width: 1px;
+}
 main #results .modal-body #category-results.hidden {
   display: none;
 }

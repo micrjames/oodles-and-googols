@@ -5,7 +5,7 @@ class Tabs {
     #tabs = [];
     #tabs_group;
 
-    constructor(properties, outlet) {
+    constructor(properties) {
 	    for(let tabIndex = 1; tabIndex <= properties.length; tabIndex++) {                              
 		   const _this = this;
 		   const tab = new Tab("tabs-hdr-btn-group-btn", "btn", function() {
@@ -15,7 +15,6 @@ class Tabs {
 					   tab.style.zIndex = 100;
 					   tab.style.width = "35%";
 					   tab.style.height = "100%";
-					   outlet.textContent = properties[tabIndex-1].content;
 				   }
 				   else {
 					  tab.classList.remove("enabled");
@@ -26,7 +25,6 @@ class Tabs {
 		   tab.text = properties[tabIndex-1].text;
 		   if(properties[tabIndex-1].enabled) {
 			  tab.tab.classList.add("enabled");
-			  outlet.textContent = properties[tabIndex-1].content;
 		   }
 		   if(tab.tab.classList.contains("enabled")) tab.width = "35%";
 		   else tab.width = `${65/(properties.length-1)}%`;

@@ -1,4 +1,5 @@
 import { createSpan, createListItem, removeChildren } from "./DOMutils.js";
+import { recipeResults } from "./incs.js";
 
 const createResultIngredientsList = function(meal) {                       
     const recipeResultIngredientsList = document.createElement("ul");       
@@ -39,7 +40,6 @@ const setRecipeResult = function(recipeResult, meal) {
    const recipeInstructionsTextList = recipeResultInstructions.children.namedItem("recipe-result-instructions-text-list");
     
    recipeResultIngredients.appendChild(createResultIngredientsList(meal));
-   console.log(recipeResultImageThumb);
    recipeResultImageThumb.src = meal.strMealThumb;                                         
    recipeResultTitle.textContent = meal.strMeal;
    createResultInstructionsList(recipeInstructionsTextList, meal);
@@ -60,7 +60,7 @@ const resetRecipeResult = function(recipeResult) {
 
    removeChildren(recipeInstructionsTextList);
 
-   recipeResult.parentElement.classList.add("hidden");
+   recipeResults.classList.add("hidden");
 };
 
 export { setRecipeResult, resetRecipeResult };

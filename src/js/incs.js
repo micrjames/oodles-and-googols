@@ -12,6 +12,7 @@ const resultsHdrText = resultsHdr.children[1];
                                     
 const resultsBody = results.children.namedItem("modal-body");
 const recipeResults = resultsBody.children.namedItem("recipe-results");
+const recipeResultsHdr = recipeResults.children.namedItem("recipe-results-hdr");
 const categoryResults = resultsBody.children.namedItem("category-results");
 
 const categoryVeganData = await fetchData("https://www.themealdb.com/api/json/v1/1/filter.php?c=Vegan");
@@ -31,4 +32,12 @@ const choiceRecord = {
     "selections": [] 
 };
 
-export { products, results, resultsCloseBtn, resultsHdrText, recipeResults, categoryResults, categoriesData, choiceRecord };
+const recResContents = [
+    {"text": "Tab 1", "enabled": true},
+    {"text": "Tab 2", "enabled": false},
+    {"text": "Tab 3", "enabled": false},
+    {"text": "Tab 4", "enabled": false},
+    {"text": "Tab 5", "enabled": false}
+];
+
+export { products, results, resultsCloseBtn, resultsHdrText, recipeResults, recipeResultsHdr, categoryResults, categoriesData, choiceRecord, recResContents };

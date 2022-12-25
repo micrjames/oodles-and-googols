@@ -29,8 +29,6 @@ const createCategoryResults = function(categoryResults, meals, mealsSlice, mealS
 
    const categoryResultsBtnGroup = createCategoryBtnGroup(categoryResults, meals);
    categoryResults.appendChild(categoryResultsBtnGroup);
-
-   return categoryResultsBtnGroup.children;
 };
 const createCategoryResult = function(categoryResults, meal, selFlag) {
    const categoryResult = document.createElement("div");                                    
@@ -83,9 +81,8 @@ const createCategoryBtnGroup = function(categoryResults, meals) {
 		   const recipePromise = getRecipe(mealId);
 		   recipePromise.then(recipe => {
 			   recipes = [...recipes, recipe.meals[0]];
-			   setRecipeResult(recipeResults.children[0], recipes[0]); 
+			   setRecipeResult(recipeResults.children[1], recipes[0]); 
 		   }).catch(err => console.error(err));
-		   console.log();
 	   });
 	   categoryResults.classList.add("hidden");
 	   recipeResults.classList.remove("hidden");
