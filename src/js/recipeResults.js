@@ -1,5 +1,6 @@
 import { createSpan, createListItem, removeChildren } from "./DOMutils.js";
 import { recipeResults } from "./incs.js";
+import { titleCase } from "./utils.js";
 
 const createResultIngredientsList = function(meal) {                       
     const recipeResultIngredientsList = document.createElement("ul");       
@@ -41,7 +42,7 @@ const setRecipeResult = function(recipeResult, meal) {
     
    recipeResultIngredients.appendChild(createResultIngredientsList(meal));
    recipeResultImageThumb.src = meal.strMealThumb;                                         
-   recipeResultTitle.textContent = meal.strMeal;
+   recipeResultTitle.textContent = titleCase(meal.strMeal);
    createResultInstructionsList(recipeInstructionsTextList, meal);
 };
 
