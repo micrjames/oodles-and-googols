@@ -5,7 +5,7 @@ class Tabs {
     #tabs = [];
     #tabs_group;
 
-    constructor(properties) {
+    constructor(properties, doSelect) {
 	    for(let tabIndex = 1; tabIndex <= properties.length; tabIndex++) {                              
 		   const _this = this;
 		   const tab = new Tab("tabs-hdr-btn-group-btn", "btn", function() {
@@ -15,6 +15,7 @@ class Tabs {
 					   tab.style.zIndex = 100;
 					   tab.style.width = "35%";
 					   tab.style.height = "100%";
+					   doSelect(tab, tabIndex);
 				   }
 				   else {
 					  tab.classList.remove("enabled");

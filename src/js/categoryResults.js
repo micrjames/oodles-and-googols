@@ -82,6 +82,7 @@ const createCategoryBtnGroup = function(categoryResults, meals) {
    categoryResultSelectBtn.addEventListener("click", function() {
 	   removeChildren(recipeResultsHdr);
 	   
+	   let recipes = [];
 	   let recResContents = []; 
 	   let resContents = {};
 	   choiceRecord.selections.forEach((selection, selectionIndex) => {
@@ -93,14 +94,19 @@ const createCategoryBtnGroup = function(categoryResults, meals) {
 	
 		   const recipePromise = getRecipe(mealId);
 		   recipePromise.then(recipe => {
-			   setRecipeResult(recipeResults.children[1], recipe.meals[0]); 
+			   recipes[selectionIndex] = recipe.meals[0];
+			   if(!recipeResultsHdr.children.length) {
+				   if(recResContents.length > 1) {
+					  tabs = new Tabs(recResContents, function(_, tabIndex) {
+						  setRecipeResult(recipeResults.children[1], recipes[tabIndex-1]); 
+					  });  
+					  tabs.setStyle(); 
+					  recipeResultsHdr.appendChild(tabs.tabsGroup);
+				   }
+			   }
+			   setRecipeResult(recipeResults.children[1], recipes[0]); 
 		   }).catch(err => console.error(err));
 	   });
-	   if(recResContents.length > 1) {
-		  tabs = new Tabs(recResContents);  
-		  tabs.setStyle(); 
-		  recipeResultsHdr.appendChild(tabs.tabsGroup);
-	   }
 	   categoryResults.classList.add("hidden");
 	   recipeResults.classList.remove("hidden");
    });
