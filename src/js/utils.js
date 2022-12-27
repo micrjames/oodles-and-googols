@@ -25,4 +25,8 @@ const getRecipe = async function(mealId) {
     return await fetchData(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`); 
 };
 
-export { titleCase, ignoreText, getRecipe };
+const sortArray = function(array) {
+    return array.sort(function(a, b){return a - b});
+};
+
+export { titleCase, ignoreText, getRecipe, sortArray };

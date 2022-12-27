@@ -1,8 +1,9 @@
-import { products, results, resultsCloseBtn, resultsHdrText, recipeResults, categoryResults, categoriesData, recResContents, recipeResultsHdr } from "./incs.js";
-import { titleCase, ignoreText } from "./utils.js";
+import { products, results, resultsCloseBtn, resultsHdrText, recipeResults, categoryResults, categoriesData, recResContents, recipeResultsHdr, priceFormatter } from "./incs.js";
+import { titleCase, ignoreText, sortArray } from "./utils.js";
 import { setCategoryResults, resetCategoryResults } from "./categoryResults.js";
 import { resetRecipeResult } from "./recipeResults.js";
 import Tabs from "./Tabs.js";
+import { adjustProductPrice } from "./setRandomPrice.js";
 
 const tabs = new Tabs(recResContents);
 tabs.setStyle();
@@ -23,6 +24,12 @@ for(const product of products.children) {
 
 			   window.scrollTo(0, 0);
 		   });
+	   if(child.classList.contains("product-price")) {
+		   const productPrices = sortArray([adjustProductPrice(0.78), adjustProductPrice(0.98)]);
+		   child.children[0].textContent = productPrices[0];
+		   child.children[1].textContent = productPrices[1];
+	   }
+	       
 	}
 }
 			   

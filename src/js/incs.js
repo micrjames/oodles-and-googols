@@ -4,6 +4,7 @@ const body = document.body;
 const main = body.children.namedItem("main");
 
 const products = main.children.namedItem("products");
+
 const results = main.children.namedItem("results");
 
 const resultsHdr = results.children.namedItem("modal-header");
@@ -40,4 +41,9 @@ const recResContents = [
     {"text": "Tab 5", "enabled": false}
 ];
 
-export { products, results, resultsCloseBtn, resultsHdrText, recipeResults, recipeResultsHdr, categoryResults, categoriesData, choiceRecord, recResContents };
+const priceFormatter = new Intl.NumberFormat('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+});
+
+export { products, results, resultsCloseBtn, resultsHdrText, recipeResults, recipeResultsHdr, categoryResults, categoriesData, choiceRecord, recResContents, priceFormatter };
