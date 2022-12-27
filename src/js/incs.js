@@ -30,20 +30,12 @@ const categoriesData = {
 };
 
 const choiceRecord = {
-    "selections": [] 
+    "selections": []
 };
-
-const recResContents = [
-    {"text": "Tab 1", "enabled": true},
-    {"text": "Tab 2", "enabled": false},
-    {"text": "Tab 3", "enabled": false},
-    {"text": "Tab 4", "enabled": false},
-    {"text": "Tab 5", "enabled": false}
-];
 
 const priceFormatter = new Intl.NumberFormat('en-US', {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
 });
 
-export { products, results, resultsCloseBtn, resultsHdrText, recipeResults, recipeResultsHdr, categoryResults, categoriesData, choiceRecord, recResContents, priceFormatter };
+export { products, results, resultsCloseBtn, resultsHdrText, recipeResults, recipeResultsHdr, categoryResults, categoriesData, choiceRecord, priceFormatter };

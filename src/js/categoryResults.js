@@ -1,12 +1,15 @@
 import { createSpan, createBtn, createBtnGroup, removeChildren } from "./DOMutils.js";
 import { titleCase, getRecipe } from "./utils.js";
-import { choiceRecord, recipeResults } from "./incs.js";
+import { choiceRecord, recipeResults, recipeResultsHdr } from "./incs.js";
 import { setRecipeResult } from "./recipeResults.js";
+import Tabs from "./Tabs.js";
 
 const mealsPerPage = 6;
 let whereSliceStart;
 let sliceEnd;
 let resultsPage = 0;
+let tabs;
+
 const setCategoryResults = function(categoryResults, meals, sliceStart) {
    choiceRecord.selections = [];
    whereSliceStart = sliceStart;
@@ -66,6 +69,8 @@ const createCategoryBtnGroup = function(categoryResults, meals) {
    const categoryResultsNextBtn = createBtn("category-results-next-btn", "btn", "greater-than");
    const categoryResultSelectBtn = createBtn("category-result-select-btn", "btn", "utensils"); 
 
+   let tabEnabled;
+
    categoryResultsPrevBtn.addEventListener("click", function() {
 	  resultsPage--;
 	  whereSliceStart-=mealsPerPage;
@@ -75,15 +80,27 @@ const createCategoryBtnGroup = function(categoryResults, meals) {
 	  createCategoryResults(categoryResults, meals, mealsSlice, choiceRecord.selections);
    });
    categoryResultSelectBtn.addEventListener("click", function() {
-	   let recipes = [];
-	   choiceRecord.selections.forEach(selection => {
+	   removeChildren(recipeResultsHdr);
+	   
+	   let recResContents = []; 
+	   let resContents = {};
+	   choiceRecord.selections.forEach((selection, selectionIndex) => {
 		   const mealId = meals[selection].idMeal;
+		   if(selectionIndex == 0) tabEnabled = false;
+		   else tabEnabled = true;
+		   resContents = {text: `Recipe ${selectionIndex}`, enabled: tabEnabled};
+		   recResContents[selectionIndex] = resContents; 
+	
 		   const recipePromise = getRecipe(mealId);
 		   recipePromise.then(recipe => {
-			   recipes = [...recipes, recipe.meals[0]];
-			   setRecipeResult(recipeResults.children[1], recipes[0]); 
+			   setRecipeResult(recipeResults.children[1], recipe.meals[0]); 
 		   }).catch(err => console.error(err));
 	   });
+	   if(recResContents.length > 1) {
+		  tabs = new Tabs(recResContents);  
+		  tabs.setStyle(); 
+		  recipeResultsHdr.appendChild(tabs.tabsGroup);
+	   }
 	   categoryResults.classList.add("hidden");
 	   recipeResults.classList.remove("hidden");
    });

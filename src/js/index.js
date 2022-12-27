@@ -1,14 +1,8 @@
-import { products, results, resultsCloseBtn, resultsHdrText, recipeResults, categoryResults, categoriesData, recResContents, recipeResultsHdr, priceFormatter } from "./incs.js";
+import { products, results, resultsCloseBtn, resultsHdrText, recipeResults, categoryResults, categoriesData } from "./incs.js";
 import { titleCase, ignoreText, sortArray } from "./utils.js";
 import { setCategoryResults, resetCategoryResults } from "./categoryResults.js";
 import { resetRecipeResult } from "./recipeResults.js";
-import Tabs from "./Tabs.js";
 import { adjustProductPrice } from "./setRandomPrice.js";
-
-const tabs = new Tabs(recResContents);
-tabs.setStyle();
-
-recipeResultsHdr.appendChild(tabs.tabsGroup);
 
 for(const product of products.children) {
     for(const child of product.children) {
