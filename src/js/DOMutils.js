@@ -11,7 +11,7 @@ const createSpan = function(text = null, idName = null, className = null) {
     if(text) {
 	   span.textContent = text;
 	}
-    if(idName) span.setAttAribute("id", idName);
+    if(idName) span.setAttribute("id", idName);
     if(className) span.setAttribute("class", className);
 
     return span;
@@ -69,4 +69,4 @@ const removeChildren = function(context) {
    }
 };
 
-export { buildEl, createSpan, createListItem, createBtn, createBtnGroup, removeChildren }; 
+export { buildEl, createSpan, createListItem, addIcon, createBtn, createBtnGroup, removeChildren }; 

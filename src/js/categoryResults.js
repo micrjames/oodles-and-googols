@@ -2,6 +2,7 @@ import { createSpan, createBtn, createBtnGroup, removeChildren } from "./DOMutil
 import { titleCase, getRecipe } from "./utils.js";
 import { choiceRecord, recipeResults, recipeResultsHdr } from "./incs.js";
 import { setRecipeResult } from "./recipeResults.js";
+import { setRecipeResultControls } from "./recipeResultsControls.js";
 import Tabs from "./Tabs.js";
 
 const mealsPerPage = 6;
@@ -107,6 +108,7 @@ const createCategoryBtnGroup = function(categoryResults, meals) {
 			   setRecipeResult(recipeResults.children[1], recipes[0]); 
 		   }).catch(err => console.error(err));
 	   });
+	   setRecipeResultControls(recipeResults); // tooltip shopping cart controls here
 	   categoryResults.classList.add("hidden");
 	   recipeResults.classList.remove("hidden");
    });
