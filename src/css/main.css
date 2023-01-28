@@ -102,14 +102,22 @@ header {
   background-color: lightgray;
   padding: 1.25rem 1.2rem;
 }
-footer #site-info ul {
+footer #link-text a {
+  margin: 0 1.5rem;
+  font-size: 1.15rem;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+footer #footer-info #site-info ul {
   list-style-type: none;
 }
-footer #site-info ul li {
+footer #footer-info #site-info ul li {
   display: inline;
   cursor: pointer;
 }
-footer #site-info ul li:not(:last-child) {
+footer #footer-info #site-info ul li:not(:last-child) {
   margin-right: 1.2rem;
 }
 
@@ -120,11 +128,10 @@ footer {
   position: fixed;
   bottom: 0;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  justify-content: space-between;
   padding: 0.95rem;
 }
-footer #copyright-info {
+footer #footer-info #copyright-info {
   font-size: 1rem;
 }
 
