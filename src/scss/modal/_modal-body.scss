@@ -1,4 +1,4 @@
-@import '../utils/button', '../parts/main/recipes', '../parts/main/categories', '../parts/main/category-result-btn-group', '../parts/main/tabs';
+@import '../utils/button', '../parts/main/recipes', '../parts/main/recipe-result-controls', '../parts/main/categories', '../parts/main/category-result-btn-group', '../parts/main/tabs';
 
 $primary-color:  #282828;
 $secondary-color: #ff652f;
@@ -10,6 +10,7 @@ $secondary-color: #ff652f;
 			@include tabs($primary-color);
 		}
 	    @extend %recipe-result;
+        @extend %recipe-result-controls;
 	}
 	#category-results {
 		@extend %category-result;

@@ -1,24 +1,24 @@
 import { buildEl, createSpan, addIcon } from "./DOMutils.js";
 
 const setRecipeResultControls = function(recipeResults) {
-    const recipeResultControls = document.createElement("recipe-result-controls");
+    const recipeResultControls = buildEl("div", "recipe-results-controls");
    
-    const rRCpreamble = createSpan("serving for", "recipe-result-controls-preamble"); 
+    const rRCpreamble = createSpan("serving for", "recipe-results-controls-preamble"); 
     recipeResultControls.appendChild(rRCpreamble);
 
-    const rRCbtnGroup = buildEl("div", null, "recipe-result-controls-btn-group");
+    const rRCbtnGroup = buildEl("div", null, "recipe-results-controls-btn-group");
     recipeResultControls.appendChild(rRCbtnGroup);
 
-    const rRCbtnGroupMinus = buildEl("button", "btn", "recipe-result-controls-btn-group-minus");
+    const rRCbtnGroupMinus = buildEl("button", "btn", "recipe-results-controls-btn-group-minus");
     addIcon(rRCbtnGroupMinus, "minus");
-    recipeResultControls.appendChild(rRCbtnGroupMinus);
+    rRCbtnGroup.appendChild(rRCbtnGroupMinus);
     
-    const rRCbtnGroupCount = createSpan(null, "recipe-result-controls-btn-group-count");
-    recipeResultControls.appendChild(rRCbtnGroupCount);
+    const rRCbtnGroupCount = createSpan("0", "recipe-results-controls-btn-group-count");
+    rRCbtnGroup.appendChild(rRCbtnGroupCount);
 
-    const rRCbtnGroupPlus = buildEl("button", "btn", "recipe-result-controls-btn-group-plus");
+    const rRCbtnGroupPlus = buildEl("button", "btn", "recipe-results-controls-btn-group-plus");
     addIcon(rRCbtnGroupPlus, "plus");
-    recipeResultControls.appendChild(rRCbtnGroupPlus);
+    rRCbtnGroup.appendChild(rRCbtnGroupPlus);
 
     recipeResults.appendChild(recipeResultControls);
 };
