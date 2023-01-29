@@ -1,4 +1,4 @@
-@import 'utils/config', 'parts/header', 'parts/footer', 'parts/main/features', 'parts/main/products', 'modal/modal';
+@import 'utils/config', 'parts/header', 'parts/footer', 'parts/main/features', 'parts/main/products', 'modal/modal', 'tooltip/tooltip', 'tooltip/tooltip-content';
 
 $modal-width: 90%;
 $modal-bg-color: white;
@@ -6,6 +6,10 @@ $modal-text-color: black;
 
 header {
     @extend %header;
+	.tooltip {
+	   @include tooltip(1rem, white, black);
+	   @extend %tooltip-content;
+	}
 }
 main {
     width: 100%;

@@ -9,7 +9,7 @@
    	<title>Oodles and Googols</title>
 	</head>
 	<body>
-        <header id="header">                                                                              
+        <header id="header">                                                                            
             <div id="company-identifier">
                 <i id="logo-icon" class="fa-brands fa-google"></i>
                 <span id="company-name">
@@ -30,12 +30,21 @@
                     <li>About</li>
                     <li>Login</li>
                     <li>Signup</li>
-                    <li id="shopping-cart-trigger">
-                        <i class="fa-solid fa-cart-shopping"></i>
-						<span id="cart-items-count">0</span>
-                    </li>
                 </menu>
             </nav>
+		    <div id="cart-items" class="tooltip">
+			    <i id="shopping-cart-trigger" class="fa-solid fa-cart-shopping"></i>
+			    <div id="tooltip-content" class="tooltip-content hidden">
+				   <section id="default-summary">
+					  <i class="fa-solid fa-box-open"></i>
+					  <p>No orders found.</p>
+					  <p>
+						 <i class="fa-solid fa-magnifying-glass"></i>
+						 <span>Looks like you haven&apos;t made a selection yet.</span>
+					  </p>
+				   </section>
+			    </div>
+		    </div>
         </header>
 		<main id="main">
 		   <h1>Handcrafted, homemade foods. We&apos;ve got recipes for a <strong>googol</strong> of them.</h1>

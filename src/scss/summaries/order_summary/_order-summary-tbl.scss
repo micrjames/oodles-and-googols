@@ -1,0 +1,20 @@
+@import "order_summary_tbl/order-summary-tbl-caption", "order_summary_tbl/order-summary-tbl-head", "order_summary_tbl/order-summary-tbl-body", "order_summary_tbl/order-summary-tbl-foot";
+
+%order-summary-tbl {
+    text-align: center;
+	overflow: scroll;
+    table {
+        width: 100%;
+        font-size: 1.2rem;
+		border-collapse: collapse;
+		
+        @extend %order-summary-tbl-caption;
+		@extend %order-summary-tbl-head;
+		@extend %order-summary-tbl-body;
+		@extend %order-summary-tbl-foot;
+
+		&.hidden {
+		   display: none;
+        }
+    }
+} 

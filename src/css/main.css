@@ -69,22 +69,7 @@ header nav menu li {
   font-size: 1.2rem;
   display: inline;
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
-}
-header nav menu li:last-child i {
-  font-size: 1.75rem;
-}
-header nav menu li:last-child span {
-  position: relative;
-  bottom: 20px;
-  right: 15px;
-  background-color: red;
-  padding: 0.15rem 0.5rem;
-  border-radius: 3px;
-  font-size: 0.85rem;
-}
-header nav menu li:not(:last-child) {
-  margin-right: 1.2rem;
+  margin-right: 1.25rem;
 }
 header nav menu li:hover {
   font-weight: bolder;
@@ -102,6 +87,16 @@ header {
   background-color: lightgray;
   padding: 1.25rem 1.2rem;
 }
+header #cart-items {
+  cursor: pointer;
+}
+header #cart-items i {
+  font-size: 1.75rem;
+}
+header #cart-items.hidden {
+  display: none;
+}
+
 footer #link-text a {
   margin: 0 1.5rem;
   font-size: 1.15rem;
@@ -499,6 +494,294 @@ main #results .modal-body #recipe-results-hdr #tabs-hdr-btn-group-btn {
   border-width: 1px;
 }
 main #results .modal-body #category-results.hidden {
+  display: none;
+}
+
+main #results .modal-header, main #results {
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+header .tooltip .tooltip-content #default-summary {
+  text-align: center;
+}
+header .tooltip .tooltip-content #default-summary i {
+  margin: 5rem 0;
+  font-size: 15rem;
+  color: gray;
+  opacity: 0.5;
+}
+header .tooltip .tooltip-content #default-summary p {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: red;
+}
+header .tooltip .tooltip-content #default-summary p:last-child {
+  color: black;
+  font-size: 1.2rem;
+}
+header .tooltip .tooltip-content #default-summary p:last-child i {
+  font-size: 1.5rem;
+}
+header .tooltip .tooltip-content #default-summary.hidden {
+  display: none;
+}
+
+header .tooltip .tooltip-content #order-summary table caption {
+  font-size: 1.5rem;
+  padding: 1.25rem;
+}
+
+header .tooltip .tooltip-content #order-summary table thead tr {
+  border-bottom: 1px solid #ddd;
+}
+header .tooltip .tooltip-content #order-summary table thead tr th {
+  padding: 0.75rem 0;
+}
+
+header .tooltip .tooltip-content #order-summary table tbody tr th {
+  font-weight: bolder;
+}
+header .tooltip .tooltip-content #order-summary table tbody tr td {
+  padding: 0.75rem 0;
+}
+header .tooltip .tooltip-content #order-summary table tbody tr td:last-child::before {
+  content: "$";
+}
+
+header .tooltip .tooltip-content #order-summary table tfoot tr th {
+  font-size: 1.35rem;
+}
+header .tooltip .tooltip-content #order-summary table tfoot tr td {
+  border-top: 1px dashed #aaa;
+  padding: 1.5rem 0;
+}
+header .tooltip .tooltip-content #order-summary table tfoot tr td:last-child::before {
+  content: "$";
+}
+
+header .tooltip .tooltip-content #order-summary {
+  text-align: center;
+  overflow: scroll;
+}
+header .tooltip .tooltip-content #order-summary table {
+  width: 100%;
+  font-size: 1.2rem;
+  border-collapse: collapse;
+}
+header .tooltip .tooltip-content #order-summary table.hidden {
+  display: none;
+}
+
+header .tooltip .tooltip-content #order-summary #order-summary-list li .order-list-hdr {
+  list-style-type: inherit;
+  padding: 0.75rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+header .tooltip .tooltip-content #order-summary #order-summary-list li .order-list-hdr li {
+  padding: 0;
+}
+header .tooltip .tooltip-content #order-summary #order-summary-list li .order-list-hdr li span {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+header .tooltip .tooltip-content #order-summary #order-summary-list li .order-list-hdr li i {
+  font-size: 1.95rem;
+}
+
+header .tooltip .tooltip-content #order-summary #order-summary-list li .order-list-body {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: inherit;
+}
+header .tooltip .tooltip-content #order-summary #order-summary-list li .order-list-body::before {
+  content: "Ingredients:";
+  font-weight: bolder;
+}
+header .tooltip .tooltip-content #order-summary #order-summary-list li .order-list-body li {
+  padding: 0 0.25rem;
+}
+header .tooltip .tooltip-content #order-summary #order-summary-list li .order-list-body li:last-child {
+  padding-right: 0;
+}
+header .tooltip .tooltip-content #order-summary #order-summary-list li .order-list-body li:not(:last-child)::after {
+  content: ",";
+}
+header .tooltip .tooltip-content #order-summary #order-summary-list li .order-list-body::after {
+  content: ".";
+}
+
+header .tooltip .tooltip-content #order-summary #order-summary-list li .order-list-foot {
+  list-style-type: inherit;
+  border-top: 2px solid gray;
+  display: flex;
+  justify-content: flex-end;
+}
+header .tooltip .tooltip-content #order-summary #order-summary-list li .order-list-foot li {
+  font-size: 1.15rem;
+}
+header .tooltip .tooltip-content #order-summary #order-summary-list li .order-list-foot li:nth-child(2)::before {
+  content: "x";
+}
+header .tooltip .tooltip-content #order-summary #order-summary-list li .order-list-foot li:nth-child(odd) {
+  font-weight: bold;
+}
+header .tooltip .tooltip-content #order-summary #order-summary-list li .order-list-foot li:last-child::before {
+  content: "$";
+}
+
+header .tooltip .tooltip-content #order-summary #order-summary-list {
+  list-style-type: none;
+}
+header .tooltip .tooltip-content #order-summary #order-summary-list li {
+  background-color: lightgray;
+  padding: 1.15rem 0.95rem;
+  border-radius: 10px;
+}
+header .tooltip .tooltip-content #order-summary #order-summary-list.hidden {
+  display: none;
+}
+
+header .tooltip .tooltip-content #order-summary #list-view-toggle-btn {
+  position: relative;
+  left: 40%;
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  border: 3px solid black;
+  background-color: transparent;
+}
+header .tooltip .tooltip-content #order-summary #list-view-toggle-btn .pressed {
+  background-color: black;
+}
+header .tooltip .tooltip-content #order-summary #list-view-toggle-btn .pressed i {
+  color: white;
+}
+header .tooltip .tooltip-content #order-summary #list-view-toggle-btn.hidden {
+  display: none;
+}
+
+header .tooltip .tooltip-content #order-summary #order-summary-btn-group .btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 0.65rem 1.2rem;
+  margin: 0;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 6px 2px 9px 2px rgba(0, 0, 0, 0.6);
+  transition: all 0.5s ease-in-out;
+}
+header .tooltip .tooltip-content #order-summary #order-summary-btn-group .btn:active {
+  box-shadow: none;
+}
+header .tooltip .tooltip-content #order-summary #order-summary-btn-group .btn:disabled {
+  box-shadow: none;
+  opacity: 0.2;
+}
+header .tooltip .tooltip-content #order-summary #order-summary-btn-group .btn i {
+  color: white;
+}
+
+header .tooltip .tooltip-content #order-summary {
+  height: 100%;
+  overflow: scroll;
+}
+header .tooltip .tooltip-content #order-summary #order-summary-btn-group {
+  display: flex;
+  justify-content: space-around;
+}
+header .tooltip .tooltip-content #order-summary #order-summary-btn-group.hidden {
+  display: none;
+}
+header .tooltip .tooltip-content #order-summary.hidden {
+  display: none;
+}
+
+header .tooltip .tooltip-content {
+  right: 0;
+  width: 450px;
+  height: 625px;
+  top: 120%;
+  left: -380px;
+}
+header .tooltip .tooltip-content #checkout i {
+  font-size: 2.75rem;
+}
+header .tooltip .tooltip-content #checkout > i {
+  margin: 5rem 0;
+  font-size: 15rem;
+  color: gray;
+  opacity: 0.5;
+}
+header .tooltip .tooltip-content #checkout p {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: red;
+}
+header .tooltip .tooltip-content #checkout .btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  margin: 3rem 0 0 0;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid black;
+}
+header .tooltip .tooltip-content #checkout.hidden {
+  display: none;
+}
+
+header .tooltip {
+  position: relative;
+}
+header .tooltip-content {
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  white-space: nowrap;
+  border-radius: 5px;
+  position: absolute;
+}
+header .tooltip-content::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  border-color: transparent transparent white transparent;
+  left: 90%;
+  transform: translateX(-90%);
+  border-width: 10px;
+  border-style: solid;
+}
+header .tooltip-content.hidden {
   display: none;
 }
 

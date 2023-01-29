@@ -9,10 +9,20 @@
 
    background-color: lightgray;
    padding: 1.25rem 1.2rem;
+
    #company-identifier {
 	   @extend %site-identifier;
    }
    nav {
 	   @extend %nav;
+   }
+   #cart-items {
+	  cursor: pointer;
+	  i {                                                                                          
+         font-size: 1.75rem;
+      }   
+      &.hidden {
+		 display: none;
+      }   
    }
 }

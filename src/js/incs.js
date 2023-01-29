@@ -1,8 +1,12 @@
 import { fetchData } from "./fetchData.js";
 
 const body = document.body;
-const main = body.children.namedItem("main");
+const hdr = body.children.namedItem("header");
+const cartItems = hdr.children.namedItem("cart-items");
+const scTrigger = cartItems.children.namedItem("shopping-cart-trigger");
+const tooltipContent = cartItems.children.namedItem("tooltip-content");
 
+const main = body.children.namedItem("main");
 const products = main.children.namedItem("products");
 
 const results = main.children.namedItem("results");
@@ -38,4 +42,4 @@ const priceFormatter = new Intl.NumberFormat('en-US', {
     maximumFractionDigits: 2
 });
 
-export { products, results, resultsCloseBtn, resultsHdrText, recipeResults, recipeResultsHdr, categoryResults, categoriesData, choiceRecord, priceFormatter };
+export { products, results, resultsCloseBtn, resultsHdrText, recipeResults, recipeResultsHdr, categoryResults, categoriesData, choiceRecord, priceFormatter, scTrigger, tooltipContent };

@@ -1,0 +1,21 @@
+@import "order_summary_list/order-summary-list-hdr", "order_summary_list/order-summary-list-body", "order_summary_list/order-summary-list-foot";
+
+%order-summary-list {
+   #order-summary-list {
+       list-style-type: none;
+       li {
+           background-color: lightgray;
+           padding: 1.15rem 0.95rem;
+           border-radius: 10px;
+           .order-list-hdr {
+			   @extend %order-summary-list-hdr;
+		   }
+		   @extend %order-summary-list-body;
+		   @extend %order-summary-list-foot;
+	   }
+
+	   &.hidden {
+		   display: none;
+	   }
+	}
+}

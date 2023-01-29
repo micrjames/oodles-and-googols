@@ -1,4 +1,4 @@
-import { products, results, resultsCloseBtn, resultsHdrText, recipeResults, categoryResults, categoriesData } from "./incs.js";
+import { products, results, resultsCloseBtn, resultsHdrText, recipeResults, categoryResults, categoriesData, scTrigger, tooltipContent } from "./incs.js";
 import { titleCase, ignoreText, sortArray } from "./utils.js";
 import { setCategoryResults, resetCategoryResults } from "./categoryResults.js";
 import { resetRecipeResult } from "./recipeResults.js";
@@ -31,4 +31,8 @@ resultsCloseBtn.addEventListener("click", () => {
     results.classList.add("hidden");
     resetCategoryResults(categoryResults);
     resetRecipeResult(recipeResults.children[1]);
+});
+
+scTrigger.addEventListener("click", () => {
+    tooltipContent.classList.toggle("hidden");
 });
