@@ -5,6 +5,24 @@ $modal-bg-color: white;
 $modal-text-color: black;
 
 header {
+    &#header {
+	    #cart-items {
+		    position: relative;
+		    & > i + #cart-items-count {
+				position: absolute; 
+				bottom: 15px;
+				left: 15px;
+				background-color: red;
+				padding: 0.10rem 0.5rem;
+				border-radius: 3px;
+				font-size: 1.05rem;
+
+				&.hidden {
+					display: none;
+				}
+			}
+		}
+	}
     @extend %header;
 	.tooltip {
 	   @include tooltip(1rem, white, black);

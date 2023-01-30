@@ -42,4 +42,4 @@ const priceFormatter = new Intl.NumberFormat('en-US', {
     maximumFractionDigits: 2
 });
 
-export { products, results, resultsCloseBtn, resultsHdrText, recipeResults, recipeResultsHdr, categoryResults, categoriesData, choiceRecord, priceFormatter, scTrigger, tooltipContent };
+export { products, results, resultsCloseBtn, resultsHdrText, recipeResults, recipeResultsHdr, categoryResults, categoriesData, choiceRecord, priceFormatter, cartItems, scTrigger, tooltipContent };

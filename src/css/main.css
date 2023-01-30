@@ -757,6 +757,21 @@ header .tooltip .tooltip-content #checkout.hidden {
   display: none;
 }
 
+header#header #cart-items {
+  position: relative;
+}
+header#header #cart-items > i + #cart-items-count {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  background-color: red;
+  padding: 0.1rem 0.5rem;
+  border-radius: 3px;
+  font-size: 1.05rem;
+}
+header#header #cart-items > i + #cart-items-count.hidden {
+  display: none;
+}
 header .tooltip {
   position: relative;
 }

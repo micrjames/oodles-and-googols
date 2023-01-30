@@ -1,8 +1,11 @@
-import { products, results, resultsCloseBtn, resultsHdrText, recipeResults, categoryResults, categoriesData, scTrigger, tooltipContent } from "./incs.js";
+import { products, results, resultsCloseBtn, resultsHdrText, recipeResults, categoryResults, categoriesData, scTrigger, tooltipContent, cartItems } from "./incs.js";
 import { titleCase, ignoreText, sortArray } from "./utils.js";
 import { setCategoryResults, resetCategoryResults } from "./categoryResults.js";
 import { resetRecipeResult } from "./recipeResults.js";
 import { adjustProductPrice } from "./setRandomPrice.js";
+
+const cartItemsCount = cartItems.children.namedItem("cart-items-count");
+cartItemsCount.classList.add("hidden");
 
 for(const product of products.children) {
     for(const child of product.children) {
