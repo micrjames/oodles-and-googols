@@ -37,9 +37,4 @@ const choiceRecord = {
     "selections": []
 };
 
-const priceFormatter = new Intl.NumberFormat('en-US', {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-});
-
-export { products, results, resultsCloseBtn, resultsHdrText, recipeResults, recipeResultsHdr, categoryResults, categoriesData, choiceRecord, priceFormatter, cartItems, scTrigger, tooltipContent };
+export { products, results, resultsCloseBtn, resultsHdrText, recipeResults, recipeResultsHdr, categoryResults, categoriesData, choiceRecord, cartItems, scTrigger, tooltipContent };

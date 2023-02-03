@@ -278,7 +278,7 @@ main #results .modal-body #recipe-results #recipe-results-controls-preamble {
 }
 main #results .modal-body #recipe-results #recipe-results-controls-btn-group {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 main #results .modal-body #recipe-results #recipe-results-controls-btn-group .btn {
   display: inline-block;

@@ -1,5 +1,5 @@
 import Random from "./Random.js";
-import { priceFormatter } from "./incs.js";
+import { priceFormatter } from "./priceFormatter.js";
 
 const setRandomPrice = function() {
    const randomDollars = new Random();
